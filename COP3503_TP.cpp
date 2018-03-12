@@ -1,6 +1,6 @@
 /*
  * COP3503termp.cpp
- *  Created on: Mar 8, 2018
+ *  Created on: Mar 10, 2018
  *      Author: Dave
  */
 #include <iostream>
@@ -11,6 +11,7 @@
 #include <iomanip>
 
 #include "Store.h"
+
 using namespace std;
 
 string line;
