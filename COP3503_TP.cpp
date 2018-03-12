@@ -43,7 +43,7 @@ while(getline(productDataFile, line)){
 }
 	productDataFile.close();
 
-	supermarket.listMeats();
+	supermarket.listInfo();
 	return 0;
 }
 
