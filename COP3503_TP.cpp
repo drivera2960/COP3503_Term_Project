@@ -8,6 +8,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 
 #include "Store.h"
 using namespace std;
@@ -52,6 +53,7 @@ while(getline(productDataFile, line)){
 }
 
 //create an error check on bad lines
-//alphabetize the objects
+//add additional "aisle" classes
+//
 //create a search engine
-//add images
+//add images/create gui

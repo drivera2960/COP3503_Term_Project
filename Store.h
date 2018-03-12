@@ -3,10 +3,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <iomanip>
 #include "Produce.h"
 #include "Meats.h"
-#include "Dairy_Eggs.h"
 
 using namespace std;
 
@@ -60,7 +58,7 @@ void Store::listInfo(){
 	cout<<"PRODUCE"<<endl;
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
 		cout << produceItems.at(i).getName()<< "\n" << "\t" << "Section: " << produceItems.at(i).getSection() <<"\n" << "\t";
-		cout << "Type: " << produceItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" << fixed << setprecision(2) <<produceItems.at(i).getPricePerLlb() << "\n" << "\n";
+		cout << "Type: " << produceItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << produceItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 
 	cout<<endl;
