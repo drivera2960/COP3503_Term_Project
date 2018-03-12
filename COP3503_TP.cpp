@@ -53,7 +53,8 @@ while(getline(productDataFile, line)){
 	return 0;
 }
 
-//create an error check on bad lines and on items that are already created
+//create an error check on bad lines, on items that are already created, and multiple worded items
+	//Differentiate with underscore instead of <space>?
 //add additional "aisle" classes
 //create a search engine
 //add images/create gui
