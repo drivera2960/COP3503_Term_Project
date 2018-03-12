@@ -54,6 +54,5 @@ while(getline(productDataFile, line)){
 
 //create an error check on bad lines
 //add additional "aisle" classes
-//
 //create a search engine
 //add images/create gui

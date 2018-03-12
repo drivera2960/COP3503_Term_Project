@@ -1,9 +1,7 @@
 #ifndef PRODUCE_H_
 #define PRODUCE_H_
 
-#include <iostream>
-#include <string>
-#include <vector>
+
 #include "Store.h"
 
 using namespace std;
