@@ -1,8 +1,6 @@
 #ifndef STORE_H_
 #define STORE_H_
-#include <iostream>
-#include <string>
-#include <vector>
+
 #include "Produce.h"
 #include "Meats.h"
 
@@ -68,6 +66,5 @@ void Store::listInfo(){
 		cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 }
-
 
 #endif /* STORE_H_ */

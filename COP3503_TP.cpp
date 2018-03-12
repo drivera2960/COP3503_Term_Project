@@ -53,7 +53,7 @@ while(getline(productDataFile, line)){
 	return 0;
 }
 
-//create an error check on bad lines
+//create an error check on bad lines and on items that are already created
 //add additional "aisle" classes
 //create a search engine
 //add images/create gui

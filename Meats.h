@@ -8,9 +8,9 @@ using namespace std;
 class Meats{
 	friend class Store;
 		private:
-			string name;
-			string section;
-			string type;
+			const string name;
+			const string section;
+			const string type;
 			double pricePerLlb;
 			double supermarketQuantity;
 
@@ -23,10 +23,7 @@ class Meats{
 			double getPricePerLlb();
 
 };
-Meats::Meats(string name, string section, string type, double pricePerLlb){
-	this -> name = name;
-	this -> section = section;
-	this -> type = type;
+Meats::Meats(string name, string section, string type, double pricePerLlb):name(name),section(section), type(type){
 	this -> pricePerLlb = pricePerLlb;
 	this -> supermarketQuantity = 100;
 }
@@ -45,6 +42,5 @@ string Meats::getType(){
 double Meats::getPricePerLlb(){
 	return this -> pricePerLlb;
 }
-
 
 #endif /* MEATS_H_ */

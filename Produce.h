@@ -1,7 +1,6 @@
 #ifndef PRODUCE_H_
 #define PRODUCE_H_
 
-
 #include "Store.h"
 
 using namespace std;
@@ -9,9 +8,9 @@ using namespace std;
 class Produce{
 	friend class Product;
 		private:
-			string name;
-			string section;
-			string type;
+			const string name;
+			const string section;
+			const string type;
 			double pricePerLlb;
 			double supermarketQuantity;
 
@@ -24,10 +23,7 @@ class Produce{
 			double getPricePerLlb();
 
 };
-Produce::Produce(string name, string section, string type, double pricePerLlb){
-	this -> name = name;
-	this -> section = section;
-	this -> type = type;
+Produce::Produce(string name, string section, string type, double pricePerLlb):name(name),section(section), type(type){
 	this -> pricePerLlb = pricePerLlb;
 	this -> supermarketQuantity = 100;
 }
