@@ -7,12 +7,16 @@
 
 using namespace std;
 
+//NOTE THE DIFFERENCE BETWEEN <listInfo> and <listInfoItems> methods
+
 class Store{
 	private:
 		vector <string>	allItemNames;
 		vector <Produce> produceItems;
 		vector <Meats> meatItems;
+
 		vector <Items> items;
+
 
 	public:
 		Store();
@@ -24,6 +28,8 @@ class Store{
 		void listInfo();
 		bool getAllItemNames();
 		void addItems(string name, string section, string type, double pricePerLlb);
+		void addItemsExtended(string name, string section, string type, string forWho, double pricePerLlb);
+
 		void listItemsNames();
 		void listInfoItems();
 };
@@ -43,6 +49,9 @@ void Store::addMeat(string name, string type, double pricePerLlb){
 void Store::addItems(string name, string section, string type, double pricePerLlb){
 	items.push_back(Items(name, section, type, pricePerLlb));
 	allItemNames.push_back(name);
+}
+void Store::addItemsExtended(string name, string section, string type, string servingSize, double pricePerLlb){
+	items.push_back(Items(name, section, type, servingSize, pricePerLlb));
 }
 
 void Store::listItemsNames(){
@@ -94,15 +103,27 @@ void Store::listInfoItems(){
 		}
 
 		cout<<endl;
-
 		cout<<"MEATS"<<endl;
+
 		for(int i = 0, max = items.size(); i != max; ++i){
 				if(items.at(i).getSection().compare("meat") == 0){
 					cout << items.at(i).getName()<< "\n" << "\t" << "Section: meat" <<"\n" << "\t";
 					cout << "Type: " << items.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << items.at(i).getPricePerLlb() << "\n" << "\n";
 				}
 		}
+
+		cout<<endl;
+		cout<<"Snacks"<<endl;
+
+				for(int i = 0, max = items.size(); i != max; ++i){
+						if(items.at(i).getServingSize().compare("family") == 0){
+							cout << items.at(i).getName()<< "\n" << "\t" << "Section: snacks" <<"\n" << "\t";
+							cout << "Type: " << items.at(i).getType() << "\n" <<"\t" << "Price_per_unit: $"  << items.at(i).getPricePerUnit() << "\n" << "\t";
+							cout << "Serving Size: "<< items.at(i).getServingSize()  << "\n" << "\n";
+						}
+				}
 }
+
 
 
 #endif /* STORE_H_ */

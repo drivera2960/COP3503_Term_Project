@@ -51,6 +51,10 @@ while(getline(productDataFile, line)){
 			supermarket.addItems(lineVec.at(0), lineVec.at(1), lineVec.at(2), stod(lineVec.at(3)));
 	}
 
+	if (lineVec.at(1).compare("snacks")==0){
+		supermarket.addItemsExtended(lineVec.at(0), lineVec.at(1), lineVec.at(2), lineVec.at(3), stod(lineVec.at(4)));
+	}
+
 	lineVec.clear();
 }
 	productDataFile.close();	//Closes the stream of productDataFile when the eof has been reached.
