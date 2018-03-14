@@ -9,28 +9,23 @@ class Meats{
 	friend class Store;
 		private:
 			const string name;
-			const string section;
 			const string type;
 			double pricePerLlb;
 			double supermarketQuantity;
 
 		public:
-			Meats(string name, string section, string type, double pricePerLlb);
+			Meats(string name, string type, double pricePerLlb);
 			void addMeat(string anme, string section);
-			string getSection();
 			string getName();
 			string getType();
 			double getPricePerLlb();
 
 };
-Meats::Meats(string name, string section, string type, double pricePerLlb):name(name),section(section), type(type){
+Meats::Meats(string name, string type, double pricePerLlb):name(name), type(type){
 	this -> pricePerLlb = pricePerLlb;
 	this -> supermarketQuantity = 100;
 }
 
-string Meats::getSection(){
-	return this->section;
-}
 string Meats::getName(){
 	return this -> name;
 }

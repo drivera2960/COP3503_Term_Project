@@ -3,36 +3,54 @@
 
 #include "Produce.h"
 #include "Meats.h"
+#include "Items.h"
 
 using namespace std;
 
 class Store{
 	private:
+		vector <string>	allItemNames;
 		vector <Produce> produceItems;
 		vector <Meats> meatItems;
+		vector <Items> items;
+
 	public:
 		Store();
-		void addProduce(string name, string section, string type, double pricePerLlb);
-		void addMeat(string name, string section, string type, double pricePerLlb);
-		void listProduce();
+		void addProduce(string name, string type, double pricePerLlb);
+		void addMeat(string name, string type, double pricePerLlb);
+		void listFruit();
 		void listMeats();
 		void listVegetables();
 		void listInfo();
-
+		bool getAllItemNames();
+		void addItems(string name, string section, string type, double pricePerLlb);
+		void listItemsNames();
+		void listInfoItems();
 };
 Store::Store(){
 }
 
-void Store::addProduce(string name, string section, string type, double pricePerLlb){
-	produceItems.push_back(Produce(name, section, type, pricePerLlb));
-
+void Store::addProduce(string name, string type, double pricePerLlb){
+	produceItems.push_back(Produce(name, type, pricePerLlb));
+	allItemNames.push_back(name);
 }
 
-void Store::addMeat(string name, string section, string type, double pricePerLlb){
-	meatItems.push_back(Meats(name, section, type, pricePerLlb));
+void Store::addMeat(string name, string type, double pricePerLlb){
+	meatItems.push_back(Meats(name, type, pricePerLlb));
+	allItemNames.push_back(name);
 }
 
-void Store::listProduce(){
+void Store::addItems(string name, string section, string type, double pricePerLlb){
+	items.push_back(Items(name, section, type, pricePerLlb));
+	allItemNames.push_back(name);
+}
+
+void Store::listItemsNames(){
+	for(int i = 0, max = items.size(); i!=max; ++i)
+			cout<< items.at(i).getName()<<endl;
+}
+
+void Store::listFruit(){
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
 		if(produceItems.at(i).getType().compare("fruit") == 0)
 			cout<<produceItems.at(i).getName()<<endl;
@@ -49,22 +67,42 @@ void Store::listVegetables(){
 		if(produceItems.at(i).getType().compare("vegetable") == 0)
 			cout<<produceItems.at(i).getName();
 	}
-
 }
 
 void Store::listInfo(){
 	cout<<"PRODUCE"<<endl;
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
-		cout << produceItems.at(i).getName()<< "\n" << "\t" << "Section: " << produceItems.at(i).getSection() <<"\n" << "\t";
+		cout << produceItems.at(i).getName()<< "\n" << "\t" << "Section: produce" <<"\n" << "\t";
 		cout << "Type: " << produceItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << produceItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 
 	cout<<endl;
 	cout<<"MEATS"<<endl;
 	for(int i = 0, max = meatItems.size(); i!=max; ++i){
-		cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: " << meatItems.at(i).getSection() <<"\n" << "\t";
+		cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
 		cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 }
+
+void Store::listInfoItems(){
+	cout<<"PRODUCE"<<endl;
+		for(int i = 0, max = items.size(); i != max; ++i){
+			if(items.at(i).getSection().compare("produce") == 0){
+				cout << items.at(i).getName()<< "\n" << "\t" << "Section: produce" <<"\n" << "\t";
+				cout << "Type: " << items.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << items.at(i).getPricePerLlb() << "\n" << "\n";
+			}
+		}
+
+		cout<<endl;
+
+		cout<<"MEATS"<<endl;
+		for(int i = 0, max = items.size(); i != max; ++i){
+				if(items.at(i).getSection().compare("meat") == 0){
+					cout << items.at(i).getName()<< "\n" << "\t" << "Section: meat" <<"\n" << "\t";
+					cout << "Type: " << items.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << items.at(i).getPricePerLlb() << "\n" << "\n";
+				}
+		}
+}
+
 
 #endif /* STORE_H_ */

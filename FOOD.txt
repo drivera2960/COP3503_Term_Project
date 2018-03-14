@@ -8,3 +8,5 @@ Ham meat pork 1.00
 Mango produce fruit 1
 Carrot produce vegetable 0.50
 Churrasco meat beef 3.00
+Celery produce vegetable 0.6
+Walnuts produce nut 3.56
