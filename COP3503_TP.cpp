@@ -33,7 +33,6 @@ productDataFile.open("FOOD.txt");	//Data will be streamed from the <FOOD.txt> fi
 // Saves one line of the text file into "line", until eof (end of file) is reached.
 while(getline(productDataFile, line)){
 
-
 	vector<string> lineVec;			//<lineVec> is a vector that will be used to store the split strings
 									//from the string "line"
 	istringstream iss(line);		//create a string stream "iss" to operate on the string line.
@@ -41,7 +40,6 @@ while(getline(productDataFile, line)){
 //While-loop will split "line" by the spaces it contains.  It will store the splitted strings into "lineVec"
 	while( iss >> line )
 	    lineVec.push_back(line);
-
 
 //The following bool expressions check what sections the each entry belongs to.
 	if (lineVec.at(1).compare("produce") == 0){
