@@ -2,7 +2,7 @@
  * COP3503termp.cpp
  *  Created on: Mar 10, 2018
  *      Author: Dave
- *      This is simply a trial of creating the supermarket database portion of the Term Project,
+ *      This is simply a trial program of creating the supermarket database portion of the Term Project,
  *      using a file input stream.
  *      Take note of the different classes (.h files), especially class <Items>
  *
@@ -61,9 +61,9 @@ while(getline(productDataFile, line)){
 
 	//INSERT DIFFERENT <STORE> CLASS-GETTERS TO SEE RESULTS HERE!
 	/*Study the difference between the <Items> class versus the <Produce> && <Meats> classes!
-	 *We may not want to have a different class for each aisle.  Conceptually, an instance a supermarket can be an item,
+	 *We may not want to have a different class for each aisle.  Conceptually, an instance of a supermarket can be an item,
 	 *with the aisle (in this code, aisle is called section) being a field of the instance.
-	 *The <Items> class uses this process, opposed to the  <Meats> and <Produce> classes.
+	 *The <Items> class uses this process, opposed to the  <Meats> and <Produce> classes that create objects of aisles themselves.
 	*/
 	supermarket.listInfoItems();
 
