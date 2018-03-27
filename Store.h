@@ -50,8 +50,8 @@ void Store::addItems(string name, string section, string type, double pricePerLl
 	items.push_back(Items(name, section, type, pricePerLlb));
 	allItemNames.push_back(name);
 }
-void Store::addItemsExtended(string name, string section, string type, string servingSize, double pricePerLlb){
-	items.push_back(Items(name, section, type, servingSize, pricePerLlb));
+void Store::addItemsExtended(string name, string section, string type, string servingSize, double pricePerUnit){
+	items.push_back(Items(name, section, type, servingSize, pricePerUnit));
 }
 
 void Store::listItemsNames(){
