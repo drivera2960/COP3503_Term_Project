@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/COP3503_TP.cpp
+iostream
+-
+sstream
+-
+string
+-
+fstream
+-
+vector
+-
+iomanip
+-
+Store.h
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Store.h
+
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Items.h
+Store.h
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Store.h
+
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Meats.h
+Store.h
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Store.h
+
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Produce.h
+Store.h
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Store.h
+
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Store.h
+Produce.h
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Produce.h
+Meats.h
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Meats.h
+Items.h
+C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Items.h
+
