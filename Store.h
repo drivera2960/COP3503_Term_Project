@@ -4,6 +4,8 @@
 #include "Produce.h"
 #include "Meats.h"
 #include "Items.h"
+#include "Pharmacy.h"
+#include "Snacks.h"
 
 using namespace std;
 
@@ -17,11 +19,15 @@ class Store{
 
 		vector <Items> items;
 
+        vector <Pharmacy> pharmacyItems;
+        vector <Snacks> snackItems;
 
 	public:
 		Store();
 		void addProduce(string name, string type, double pricePerLlb);
 		void addMeat(string name, string type, double pricePerLlb);
+        void addDrug(string name, double pricePerCapsules, double supermarketQuantity);
+        void addSnacks(string name, double pricePerAmount, double supermarketQuantity);
 		void listFruit();
 		void listMeats();
 		void listVegetables();
@@ -44,6 +50,15 @@ void Store::addProduce(string name, string type, double pricePerLlb){
 void Store::addMeat(string name, string type, double pricePerLlb){
 	meatItems.push_back(Meats(name, type, pricePerLlb));
 	allItemNames.push_back(name);
+}
+
+void Store::addDrug(string name, double pricePerCapsules, double supermarketQuantity) {
+    pharmacyItems.push_back(Pharmacy(name, pricePerCapsules, supermarketQuantity));
+    allItemNames.push_back(name);
+}
+
+void Store::addSnacks(string name, double pricePerAmount, double supermarketQuantity) {
+    snackItems.push_back(Snacks(name,pricePerAmount, supermarketQuantity));
 }
 
 void Store::addItems(string name, string section, string type, double pricePerLlb){
@@ -91,6 +106,19 @@ void Store::listInfo(){
 		cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
 		cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
+
+    cout<<endl;
+    cout<<"PHARMACY"<<endl;
+    for(int i = 0, max = pharmacyItems.size(); i!= max; i++){
+        cout<< pharmacyItems.at(i).getName()<< "\n" << "\t" << "Price_per_capsules: $" <<pharmacyItems.at(i).getPricePerCapsules() << "\n" << "\n";
+    }
+
+    cout<<endl;
+    cout<<"SNACKS"<<endl;
+    for(int i = 0, max = snackItems.size(); i != max; i++){
+        cout << snackItems.at(i).getName() << "\n" << "Section: Snacks" << "\t" << "Price_per_amount: $" << snackItems.at(i).getPricePerAmount() << "\n" << "\n";
+    }
+
 }
 
 void Store::listInfoItems(){
@@ -113,7 +141,7 @@ void Store::listInfoItems(){
 		}
 
 		cout<<endl;
-		cout<<"Snacks"<<endl;
+		cout<<"SNACKS"<<endl;
 
 				for(int i = 0, max = items.size(); i != max; ++i){
 						if(items.at(i).getServingSize().compare("family") == 0){

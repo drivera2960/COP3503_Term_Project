@@ -8,4 +8,4 @@ add_executable(COP3503_Term_Project
         Items.h
         Meats.h
         Produce.h
-        Store.h)
+        Store.h Pharmacy.h Snacks.h)
