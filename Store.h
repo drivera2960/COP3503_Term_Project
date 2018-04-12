@@ -14,9 +14,7 @@ class Store{
 		vector <string>	allItemNames;
 		vector <Produce> produceItems;
 		vector <Meats> meatItems;
-
 		vector <Items> items;
-
 
 	public:
 		Store();
@@ -45,6 +43,7 @@ void Store::addMeat(string name, string type, double pricePerLlb){
 	meatItems.push_back(Meats(name, type, pricePerLlb));
 	allItemNames.push_back(name);
 }
+
 
 void Store::addItems(string name, string section, string type, double pricePerLlb){
 	items.push_back(Items(name, section, type, pricePerLlb));

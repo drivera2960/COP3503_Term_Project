@@ -55,6 +55,7 @@ while(getline(productDataFile, line)){
 		supermarket.addItemsExtended(lineVec.at(0), lineVec.at(1), lineVec.at(2), lineVec.at(3), stod(lineVec.at(4)));
 	}
 
+
 	lineVec.clear();
 }
 	productDataFile.close();	//Closes the stream of productDataFile when the eof has been reached.
@@ -69,7 +70,7 @@ while(getline(productDataFile, line)){
 	 *with the aisle (in this code, aisle is called section) being a field of the instance.
 	 *The <Items> class uses this process, opposed to the  <Meats> and <Produce> classes that create objects of aisles themselves.
 	*/
-	supermarket.listInfoItems();
+	supermarket.listInfo();
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////

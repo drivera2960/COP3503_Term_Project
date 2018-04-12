@@ -6,7 +6,7 @@
 using namespace std;
 
 class Produce{
-	friend class Product;
+	friend class Store;
 		private:
 			const string name;
 			const string type;
