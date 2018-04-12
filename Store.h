@@ -4,6 +4,9 @@
 #include "Produce.h"
 #include "Meats.h"
 #include "Items.h"
+#include "Deli.h"
+#include "Bakery.h"
+
 
 using namespace std;
 
@@ -14,12 +17,18 @@ class Store{
 		vector <string>	allItemNames;
 		vector <Produce> produceItems;
 		vector <Meats> meatItems;
+        vector <Deli> deliItems;
+        vector <Bakery> bakeryItems;
+
 		vector <Items> items;
+
 
 	public:
 		Store();
 		void addProduce(string name, string type, double pricePerLlb);
 		void addMeat(string name, string type, double pricePerLlb);
+        void addDeli(string name, double pricePerLlb);
+        void addBakery(string name, double pricePerBox);
 		void listFruit();
 		void listMeats();
 		void listVegetables();
@@ -44,6 +53,17 @@ void Store::addMeat(string name, string type, double pricePerLlb){
 	allItemNames.push_back(name);
 }
 
+void Store::addDeli(string name, double pricePerLlb)
+{
+    deliItems.push_back(Deli(name, pricePerLlb)) ;
+    allItemNames.push_back(name);
+}
+
+void Store::addBakery(string name, double pricePerBox)
+{
+    bakeryItems.push_back(Bakery(name, pricePerBox));
+    allItemNames.push_back(name);
+}
 
 void Store::addItems(string name, string section, string type, double pricePerLlb){
 	items.push_back(Items(name, section, type, pricePerLlb));
@@ -90,6 +110,23 @@ void Store::listInfo(){
 		cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
 		cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
+
+    cout<<endl;
+    cout<<"DELI ITEMS"<<endl;
+    for(int k = 0; k < deliItems.size(); k++)
+    {
+        cout<<deliItems.at(k).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
+        cout <<"Price_per_llb: $" << deliItems.at(k).getPricePerLlb() << "\n" << "\n";
+    }
+
+    cout<<endl;
+    cout<<"BAKERY ITEMS"<<endl;
+    for(int k = 0; k < deliItems.size(); k++)
+    {
+        cout<<bakeryItems.at(k).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
+        cout <<"Price_per_llb: $" << bakeryItems.at(k).getPricePerBox() << "\n" << "\n";
+    }
+
 }
 
 void Store::listInfoItems(){
