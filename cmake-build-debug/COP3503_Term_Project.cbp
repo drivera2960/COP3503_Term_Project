@@ -91,7 +91,13 @@
 		<Unit filename="C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Meats.h">
 			<Option target="COP3503_Term_Project"/>
 		</Unit>
+		<Unit filename="C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Pharmacy.h">
+			<Option target="COP3503_Term_Project"/>
+		</Unit>
 		<Unit filename="C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Produce.h">
+			<Option target="COP3503_Term_Project"/>
+		</Unit>
+		<Unit filename="C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Snacks.h">
 			<Option target="COP3503_Term_Project"/>
 		</Unit>
 		<Unit filename="C:/Users/kids/Documents/GitHub/COP3503_Term_Project/Store.h">

@@ -4,6 +4,8 @@
 CMakeFiles/COP3503_Term_Project.dir/COP3503_TP.cpp.obj: ../COP3503_TP.cpp
 CMakeFiles/COP3503_Term_Project.dir/COP3503_TP.cpp.obj: ../Items.h
 CMakeFiles/COP3503_Term_Project.dir/COP3503_TP.cpp.obj: ../Meats.h
+CMakeFiles/COP3503_Term_Project.dir/COP3503_TP.cpp.obj: ../Pharmacy.h
 CMakeFiles/COP3503_Term_Project.dir/COP3503_TP.cpp.obj: ../Produce.h
+CMakeFiles/COP3503_Term_Project.dir/COP3503_TP.cpp.obj: ../Snacks.h
 CMakeFiles/COP3503_Term_Project.dir/COP3503_TP.cpp.obj: ../Store.h
 
