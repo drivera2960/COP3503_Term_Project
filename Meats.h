@@ -7,34 +7,32 @@
 
 #include "Store.h"
 
-using namespace std;
-
 class Meats{
 	friend class Store;
 		private:
-			const string name;
-			const string type;
+			const std::string name;
+			const std::string type;
 			double pricePerLlb;
 			double supermarketQuantity;
 
 		public:
-			Meats(string name, string type, double pricePerLlb);
-			void addMeat(string anme, string section);
-			string getName();
-			string getType();
+			Meats(std::string name, std::string type, double pricePerLlb);
+			void addMeat(std::string name, std::string section);
+			std::string getName();
+			std::string getType();
 			double getPricePerLlb();
 
 };
-Meats::Meats(string name, string type, double pricePerLlb):name(name), type(type){
+Meats::Meats(std::string name, std::string type, double pricePerLlb):name(name), type(type){
 	this -> pricePerLlb = pricePerLlb;
 	this -> supermarketQuantity = 100;
 }
 
-string Meats::getName(){
+std::string Meats::getName(){
 	return this -> name;
 }
 
-string Meats::getType(){
+std::string Meats::getType(){
 	return this-> type;
 }
 

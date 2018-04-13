@@ -8,8 +8,6 @@
 #include <vector>
 #include <iomanip>
 
-using namespace std;
-
 class Store{
 	private:
 		std::vector <std::string>	allItemNames;	//just holds the names of all the items
@@ -54,7 +52,7 @@ void Store::listFruit(){
 
 void Store::listMeats(){
 	for(int i = 0, max = meatItems.size(); i!=max; ++i)
-		std::cout<<meatItems.at(i).getName()<<endl;
+		std::cout<<meatItems.at(i).getName()<<std::endl;
 }
 
 void Store::listVegetables(){
@@ -75,7 +73,7 @@ void Store::listInfo(){
 	std::cout<<"MEATS"<<std::endl;
 	for(int i = 0, max = meatItems.size(); i!=max; ++i){
 		std::cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
-		std::cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
+		std::cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" << meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 }
 
