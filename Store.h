@@ -3,17 +3,23 @@
 
 #include "Produce.h"
 #include "Meats.h"
+<<<<<<< HEAD
 #include "Items.h"
 #include "Deli.h"
 #include "Bakery.h"
 
+=======
+>>>>>>> 27bdb2d87531804c2e06ed47b0c08c382a84bde2
+
+#include <string>
+#include <vector>
+#include <iomanip>
 
 using namespace std;
 
-//NOTE THE DIFFERENCE BETWEEN <listInfo> and <listInfoItems> methods
-
 class Store{
 	private:
+<<<<<<< HEAD
 		vector <string>	allItemNames;
 		vector <Produce> produceItems;
 		vector <Meats> meatItems;
@@ -21,21 +27,31 @@ class Store{
         vector <Bakery> bakeryItems;
 
 		vector <Items> items;
+=======
+		std::vector <std::string>	allItemNames;	//just holds the names of all the items
+		std::vector <Produce> produceItems;
+		std::vector <Meats> meatItems;
+>>>>>>> 27bdb2d87531804c2e06ed47b0c08c382a84bde2
 
 
 	public:
 		Store();
+<<<<<<< HEAD
 		void addProduce(string name, string type, double pricePerLlb);
 		void addMeat(string name, string type, double pricePerLlb);
         void addDeli(string name, double pricePerLlb);
         void addBakery(string name, double pricePerBox);
+=======
+		void addProduce(std::string name, std::string type, double pricePerLlb);
+		void addMeat(std::string name, std::string type, double pricePerLlb);
+>>>>>>> 27bdb2d87531804c2e06ed47b0c08c382a84bde2
 		void listFruit();
 		void listMeats();
 		void listVegetables();
 		void listInfo();
 		bool getAllItemNames();
-		void addItems(string name, string section, string type, double pricePerLlb);
-		void addItemsExtended(string name, string section, string type, string forWho, double pricePerLlb);
+		void addItems(std::string name, std::string section, std::string type, double pricePerLlb);
+		void addItemsExtended(std::string name, std::string section, std::string type, std::string forWho, double pricePerLlb);
 
 		void listItemsNames();
 		void listInfoItems();
@@ -43,12 +59,12 @@ class Store{
 Store::Store(){
 }
 
-void Store::addProduce(string name, string type, double pricePerLlb){
+void Store::addProduce(std::string name, std::string type, double pricePerLlb){
 	produceItems.push_back(Produce(name, type, pricePerLlb));
 	allItemNames.push_back(name);
 }
 
-void Store::addMeat(string name, string type, double pricePerLlb){
+void Store::addMeat(std::string name, std::string type, double pricePerLlb){
 	meatItems.push_back(Meats(name, type, pricePerLlb));
 	allItemNames.push_back(name);
 }
@@ -65,50 +81,37 @@ void Store::addBakery(string name, double pricePerBox)
     allItemNames.push_back(name);
 }
 
-void Store::addItems(string name, string section, string type, double pricePerLlb){
-	items.push_back(Items(name, section, type, pricePerLlb));
-	allItemNames.push_back(name);
-}
-void Store::addItemsExtended(string name, string section, string type, string servingSize, double pricePerUnit){
-	items.push_back(Items(name, section, type, servingSize, pricePerUnit));
-}
-
-void Store::listItemsNames(){
-	for(int i = 0, max = items.size(); i!=max; ++i)
-			cout<< items.at(i).getName()<<endl;
-}
-
 void Store::listFruit(){
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
 		if(produceItems.at(i).getType().compare("fruit") == 0)
-			cout<<produceItems.at(i).getName()<<endl;
+			std::cout<<produceItems.at(i).getName()<<std::endl;
 	}
 }
 
 void Store::listMeats(){
 	for(int i = 0, max = meatItems.size(); i!=max; ++i)
-		cout<<meatItems.at(i).getName()<<endl;
+		std::cout<<meatItems.at(i).getName()<<endl;
 }
 
 void Store::listVegetables(){
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
 		if(produceItems.at(i).getType().compare("vegetable") == 0)
-			cout<<produceItems.at(i).getName();
+			std::cout<<produceItems.at(i).getName();
 	}
 }
 
 void Store::listInfo(){
-	cout<<"PRODUCE"<<endl;
+	std::cout<<"PRODUCE"<<std::endl;
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
-		cout << produceItems.at(i).getName()<< "\n" << "\t" << "Section: produce" <<"\n" << "\t";
-		cout << "Type: " << produceItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << produceItems.at(i).getPricePerLlb() << "\n" << "\n";
+		std::cout << produceItems.at(i).getName()<< "\n" << "\t" << "Section: produce" <<"\n" << "\t";
+		std::cout << "Type: " << produceItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << produceItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 
-	cout<<endl;
-	cout<<"MEATS"<<endl;
+	std::cout<<std::endl;
+	std::cout<<"MEATS"<<std::endl;
 	for(int i = 0, max = meatItems.size(); i!=max; ++i){
-		cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
-		cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
+		std::cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
+		std::cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 
     cout<<endl;
@@ -127,37 +130,6 @@ void Store::listInfo(){
         cout <<"Price_per_llb: $" << bakeryItems.at(k).getPricePerBox() << "\n" << "\n";
     }
 
-}
-
-void Store::listInfoItems(){
-	cout<<"PRODUCE"<<endl;
-		for(int i = 0, max = items.size(); i != max; ++i){
-			if(items.at(i).getSection().compare("produce") == 0){
-				cout << items.at(i).getName()<< "\n" << "\t" << "Section: produce" <<"\n" << "\t";
-				cout << "Type: " << items.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << items.at(i).getPricePerLlb() << "\n" << "\n";
-			}
-		}
-
-		cout<<endl;
-		cout<<"MEATS"<<endl;
-
-		for(int i = 0, max = items.size(); i != max; ++i){
-				if(items.at(i).getSection().compare("meat") == 0){
-					cout << items.at(i).getName()<< "\n" << "\t" << "Section: meat" <<"\n" << "\t";
-					cout << "Type: " << items.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $"  << items.at(i).getPricePerLlb() << "\n" << "\n";
-				}
-		}
-
-		cout<<endl;
-		cout<<"Snacks"<<endl;
-
-				for(int i = 0, max = items.size(); i != max; ++i){
-						if(items.at(i).getServingSize().compare("family") == 0){
-							cout << items.at(i).getName()<< "\n" << "\t" << "Section: snacks" <<"\n" << "\t";
-							cout << "Type: " << items.at(i).getType() << "\n" <<"\t" << "Price_per_unit: $"  << items.at(i).getPricePerUnit() << "\n" << "\t";
-							cout << "Serving Size: "<< items.at(i).getServingSize()  << "\n" << "\n";
-						}
-				}
 }
 
 

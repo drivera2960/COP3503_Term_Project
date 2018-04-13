@@ -1,6 +1,10 @@
 #ifndef PRODUCE_H_
 #define PRODUCE_H_
 
+#include <string>
+#include <vector>
+#include <iomanip>
+
 #include "Store.h"
 
 using namespace std;

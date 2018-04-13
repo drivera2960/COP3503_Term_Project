@@ -8,34 +8,39 @@
  *
  *      READ ALL THE COMMENTS in this .cpp file!!!
  */
+<<<<<<< HEAD
+=======
+
+//David Testing
+>>>>>>> 27bdb2d87531804c2e06ed47b0c08c382a84bde2
 #include <iostream>
 #include <sstream>
-#include <string>
 #include <fstream>
+#include <string>
 #include <vector>
 #include <iomanip>
 
 #include "Store.h"
 
-using namespace std;
+//using namespace std;
 
-string line;
+std::string line;
 
 int main(){
 
-cout<< fixed << setprecision(2);	//Sets cout to output numbers with 2 decimal places
+std::cout<< std::fixed << std::setprecision(2);	//Sets cout to output numbers with 2 decimal places
 
 Store supermarket = Store();		//Creates object <supermarket>
 
-ifstream productDataFile;			//Initializes productDataFile as a istream object
+std::ifstream productDataFile;			//Initializes productDataFile as a istream object
 productDataFile.open("FOOD.txt");	//Data will be streamed from the <FOOD.txt> file
 
 // Saves one line of the text file into "line", until eof (end of file) is reached.
-while(getline(productDataFile, line)){
+while(std::getline(productDataFile, line)){
 
-	vector<string> lineVec;			//<lineVec> is a vector that will be used to store the split strings
+	std::vector<std::string> lineVec;			//<lineVec> is a vector that will be used to store the split strings
 									//from the string "line"
-	istringstream iss(line);		//create a string stream "iss" to operate on the string line.
+	std::istringstream iss(line);		//create a string stream "iss" to operate on the string line.
 
 //While-loop will split "line" by the spaces it contains.  It will store the splitted strings into "lineVec"
 	while( iss >> line )
@@ -44,10 +49,10 @@ while(getline(productDataFile, line)){
 //The following bool expressions check what sections the each entry belongs to.
 	if (lineVec.at(1).compare("produce") == 0){
 			supermarket.addProduce(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
-			supermarket.addItems(lineVec.at(0), lineVec.at(1), lineVec.at(2), stod(lineVec.at(3)));
 		}
 	else if (lineVec.at(1).compare("meat") == 0){
 			supermarket.addMeat(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
+<<<<<<< HEAD
 			supermarket.addItems(lineVec.at(0), lineVec.at(1), lineVec.at(2), stod(lineVec.at(3)));
 	}
 
@@ -58,6 +63,9 @@ while(getline(productDataFile, line)){
     {
         supermarket.addBakery(lineVec.at(0), stod(lineVec.at(1)));
     }
+=======
+	}
+>>>>>>> 27bdb2d87531804c2e06ed47b0c08c382a84bde2
 
 
 	lineVec.clear();
@@ -74,7 +82,7 @@ while(getline(productDataFile, line)){
 	 *with the aisle (in this code, aisle is called section) being a field of the instance.
 	 *The <Items> class uses this process, opposed to the  <Meats> and <Produce> classes that create objects of aisles themselves.
 	*/
-	supermarket.listInfoItems();
+	supermarket.listInfo();
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
