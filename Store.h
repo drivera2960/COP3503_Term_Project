@@ -13,6 +13,8 @@
 #include "Hygiene.h"
 #include "dairy.h"
 #include "grains.h"
+#include "Drinks.h"
+#include "Cosmetics.h"
 
 /*hygeine, homeGoods, bakery class, amount wasn't initialized in constructor
  *types should be set as const?
@@ -36,6 +38,8 @@ class Store{
 		std::vector<Hygiene> hygieneItems;
 		std::vector<Dairy> dairyItems;
 		std::vector<Grains> grainItems;
+		std::vector <Drinks> drinkItems;
+		std::vector <Cosmetics> cosmeticItems;
 
 	public:
 		Store();
@@ -56,6 +60,8 @@ class Store{
 		void addSnacks(std::string name, double pricePerAmount, double supermarketQuantity);
 		void addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice);
 		void addDairy(string dairyName, string brandName, int sizeFlOz, double storePrice);
+        void addDrinks(std::string name, std::string type, double pricePerOz);
+		void addCosmetics(std::string name, std::string brand, double price);
 };
 
 Store::Store(){
@@ -89,6 +95,14 @@ void Store::addSnacks(std::string name, double pricePerAmount, double supermarke
 void Store::addBakery(std::string name, double amount, double pricePerBox)
 {
     bakeryItems.push_back(Bakery(name, amount, pricePerBox));
+}
+
+void Store::addDrinks(std::string name, std::string type, double pricePerOz){
+	drinkItems.push_back(Drinks(name, type, pricePerOz));
+}
+
+void Store::addCosmetics(std::string name, std::string brand, double price){
+	cosmeticItems.push_back(Cosmetics(name, brand, price));
 }
 
 void Store::addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice){
@@ -165,6 +179,28 @@ void Store::listInfo(){
     std::cout<<std::endl<<"SNACKS"<<std::endl;
     for(int i = 0, max = snackItems.size(); i != max; i++){
         std::cout << snackItems.at(i).getName() << "\n" << "Section: Snacks" << "\t" << "Price_per_amount: $" << snackItems.at(i).getPricePerAmount() << "\n" << "\n";
+    }
+
+    std::cout<<endl;
+	std::cout<<"DRINKS"<<endl;
+
+    for(int i = 0, max = drinkItems.size(); i != max; ++i){
+        if(drinkItems.at(i).getAisle().compare("drinks") == 0){
+            std::cout << drinkItems.at(i).getName()<< "\n" << "\t" << "Section: drinks" <<"\n" << "\t";
+            std::cout << "Type: " << drinkItems.at(i).getType() << "\n" <<"\t" << "Price_per_ounce: $"  << drinkItems.at(i).getPricePerOz() << "\n" << "\n";
+
+        }
+    }
+
+    std::cout<<endl;
+	std::cout<<"COSMETICS"<<endl;
+
+    for(int i = 0, max = cosmeticItems.size(); i != max; ++i){
+        if(cosmeticItems.at(i).getAisle().compare("cosmetics") == 0){
+            std::cout << cosmeticItems.at(i).getName()<< "\n" << "\t" << "Section: cosmetics" <<"\n" << "\t";
+            std::cout << "Brand: " << cosmeticItems.at(i).getBrand() << "\n" <<"\t" << "Price: $"  << cosmeticItems.at(i).getPrice() << "\n" << "\n";
+
+        }
     }
 
 }

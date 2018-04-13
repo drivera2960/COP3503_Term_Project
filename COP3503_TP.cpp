@@ -43,6 +43,13 @@ while(std::getline(productDataFile, line)){
 			supermarket.addMeat(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
 	}
 
+    else if (lineVec.at(1).compare("drinks") == 0){
+        supermarket.addDrinks(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
+	}
+
+	else if (lineVec.at(1).compare("cosmetics") == 0){
+		supermarket.addCosmetics(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
+	}
 
 	lineVec.clear();
 }
