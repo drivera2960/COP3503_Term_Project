@@ -4,6 +4,7 @@
 #include "Produce.h"
 #include "Meats.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "Items.h"
 <<<<<<< HEAD
 #include "Deli.h"
@@ -15,27 +16,19 @@
 
 =======
 >>>>>>> 27bdb2d87531804c2e06ed47b0c08c382a84bde2
+=======
+>>>>>>> origin/Dave
 
 #include <string>
 #include <vector>
 #include <iomanip>
 
-using namespace std;
-
 class Store{
 	private:
-<<<<<<< HEAD
-		vector <string>	allItemNames;
-		vector <Produce> produceItems;
-		vector <Meats> meatItems;
-        vector <Deli> deliItems;
-        vector <Bakery> bakeryItems;
-
-		vector <Items> items;
-=======
-		std::vector <std::string>	allItemNames;	//just holds the names of all the items
+		std::vector <std::string> allItemNames;	//just holds the names of all the items
 		std::vector <Produce> produceItems;
 		std::vector <Meats> meatItems;
+<<<<<<< HEAD
 >>>>>>> 27bdb2d87531804c2e06ed47b0c08c382a84bde2
 
         vector <Pharmacy> pharmacyItems;
@@ -57,6 +50,13 @@ class Store{
         void addDrug(string name, double pricePerCapsules, double supermarketQuantity);
         void addSnacks(string name, double pricePerAmount, double supermarketQuantity);
 >>>>>>> David
+=======
+
+	public:
+		Store();
+		void addProduce(std::string name, std::string type, double pricePerLlb);
+		void addMeat(std::string name, std::string type, double pricePerLlb);
+>>>>>>> origin/Dave
 		void listFruit();
 		void listMeats();
 		void listVegetables();
@@ -81,6 +81,7 @@ void Store::addMeat(std::string name, std::string type, double pricePerLlb){
 	allItemNames.push_back(name);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 void Store::addDeli(string name, double pricePerLlb)
 {
@@ -110,6 +111,8 @@ void Store::addBakery(string name, double pricePerBox)
     bakeryItems.push_back(Bakery(name, pricePerBox));
     allItemNames.push_back(name);
 }
+=======
+>>>>>>> origin/Dave
 
 void Store::listFruit(){
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
@@ -120,7 +123,7 @@ void Store::listFruit(){
 
 void Store::listMeats(){
 	for(int i = 0, max = meatItems.size(); i!=max; ++i)
-		std::cout<<meatItems.at(i).getName()<<endl;
+		std::cout<<meatItems.at(i).getName()<<std::endl;
 }
 
 void Store::listVegetables(){
@@ -141,8 +144,9 @@ void Store::listInfo(){
 	std::cout<<"MEATS"<<std::endl;
 	for(int i = 0, max = meatItems.size(); i!=max; ++i){
 		std::cout << meatItems.at(i).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
-		std::cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" <<meatItems.at(i).getPricePerLlb() << "\n" << "\n";
+		std::cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" << meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     cout<<endl;
@@ -207,8 +211,9 @@ void Store::listInfoItems(){
 						}
 				}
 >>>>>>> David
+=======
+>>>>>>> origin/Dave
 }
-
 
 
 #endif /* STORE_H_ */
