@@ -10,7 +10,7 @@
 
 class Store{
 	private:
-		std::vector <std::string>	allItemNames;	//just holds the names of all the items
+		std::vector <std::string> allItemNames;	//just holds the names of all the items
 		std::vector <Produce> produceItems;
 		std::vector <Meats> meatItems;
 
@@ -76,7 +76,6 @@ void Store::listInfo(){
 		std::cout << "Type: " << meatItems.at(i).getType() << "\n" <<"\t" << "Price_per_llb: $" << meatItems.at(i).getPricePerLlb() << "\n" << "\n";
 	}
 }
-
 
 
 #endif /* STORE_H_ */
