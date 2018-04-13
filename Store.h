@@ -43,6 +43,8 @@ void Store::addMeat(std::string name, std::string type, double pricePerLlb){
 }
 
 
+
+
 void Store::listFruit(){
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
 		if(produceItems.at(i).getType().compare("fruit") == 0)

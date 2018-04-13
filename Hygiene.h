@@ -35,7 +35,7 @@ class Hygiene{
             }
 
 };
-string Bakery::getName()
+string Hygiene::getName()
 {
     return this -> name;
 }
