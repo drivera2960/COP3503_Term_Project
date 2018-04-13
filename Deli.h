@@ -6,31 +6,30 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
 
 class Deli
 {
     friend class Store;
         private:
-        const string name;
+        const std::string name;
         double pricePerLlb;
         double supermarketQuantity;
 
         public:
-        Deli(string name, double pricePerLlb);
-        void addDeliProduct(string name, string section);
-        string getName();
+        Deli(std::string name, double pricePerLlb);
+        void addDeliProduct(std::string name, std::string section);
+        std::string getName();
         double getPricePerLlb();
 
 };
 
-Deli::Deli(string name, double pricePerLlb):name(name)
+Deli::Deli(std::string name, double pricePerLlb):name(name)
 {
     this ->pricePerLlb = pricePerLlb;
     this-> supermarketQuantity = 100;
 }
 
-string Deli::getName()
+std::string Deli::getName()
 {
     return this -> name;
 }

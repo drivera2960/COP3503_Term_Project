@@ -5,33 +5,32 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
-
 class Bakery
 {
     friend class Store;
 private:
-    const string name;
-    const string type;
+    const std::string name;
+    const std::string type;
     double pricePerBox;
     double amount;
     double supermarketQuantity;
 
 public:
-    Bakery(string name, double pricePerBox);
-    void addBakeryProduct(string name);
-    string getName();
+    Bakery(std::string name, double amount, double pricePerBox);
+    void addBakeryProduct(std::string name);
+    std::string getName();
     double getAmount();
     double getPricePerBox();
 };
 
-Bakery::Bakery(string name, double pricePerBox):name(name)
+Bakery::Bakery(std::string name, double amount ,double pricePerBox):name(name)
 {
+	this ->amount = amount;
     this ->pricePerBox = pricePerBox;
     this-> supermarketQuantity = 100;
 }
 
-string Bakery::getName()
+std::string Bakery::getName()
 {
     return this -> name;
 }

@@ -3,35 +3,33 @@
 
 #include "Store.h"
 #include <string>
-#include <iostream>
-
-using namespace std;
 
 class HomeGoods{
     friend class Store;
 private:
-    const string name;
-    const string type;
+    const std::string name;
+    const std::string type;
     double pricePerUnit;
     double amount;
     double supermarketQuantity;
 
 public:
-    HomeGoods(string name, double pricePerUnit);
-    string getName();
-    HomeGoods addHomeGoods(string name);
-    string getName();
+    HomeGoods(std::string name,std::string type, double amount, double pricePerUnit);
+    std::string getName();
+    HomeGoods addHomeGoods(std::string name);
     double getPricePerUnit();
     double getAmount();
 
-    HomeGoods::HomeGoods(string name, double pricePerUnit):name(name)
-    {
-        this ->pricePerUnit = pricePerUnit;
-        this-> supermarketQuantity = 100;
-    }
-
 };
-string HomeGoods::getName()
+
+HomeGoods::HomeGoods(std::string name, std::string type, double amount, double pricePerUnit):name(name)
+{
+   	this -> amount = amount;
+    this ->pricePerUnit = pricePerUnit;
+    this-> supermarketQuantity = 100;
+}
+
+std::string HomeGoods::getName()
 {
     return this -> name;
 }
@@ -46,7 +44,6 @@ double HomeGoods::getPricePerUnit()
 {
     return this->pricePerUnit;
 }
-
 
 
 #endif //COP3503_TERM_PROJECT_MASTER_HYGIENE_H

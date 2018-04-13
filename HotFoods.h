@@ -1,12 +1,7 @@
-//
-//  HotFoods.h
-//  
-//
-//  Created by Martin Lasprilla on 4/12/18.
-//
-
 #ifndef HotFoods_h
 #define HotFoods_h
+
+#include <string>
 
 class HotFoods{
     friend class Store;
@@ -16,32 +11,32 @@ private:
     double pricePerItem;
     double supermarketQuantity;
 public:
-    HotFoods (string name, string type, double pricePerItem);
+    HotFoods(std::string name, std::string type, double pricePerItem, double supermarketQuantity);
     void addHotFoods(std::string name, std::string section);
     std::string getName();
     std::string getType();
-    double pricePerItem();
+    double getPricePerItem();
     
 };
 
-HotFoods::HotFoods(std::string name, std::string type, double pricePerItem):name(name), type(type){
+HotFoods::HotFoods(std::string name, std::string type, double pricePerItem, double supermarketQuantity):name(name), type(type)
+{
     this -> pricePerItem = pricePerItem;
     this -> supermarketQuantity = 100;
 }
 
-string HotFoods::getName(){
+std::string HotFoods::getName()
+{
     return this -> name;
 }
 
-string HotFoods::getType(){
+std::string HotFoods::getType(){
     return this-> type;
 }
 
-double HotFoods::getpricePerItem(){
+double HotFoods::getPricePerItem(){
     return this -> pricePerItem;
     
 }
-
-
 
 #endif /* HotFoods_h */

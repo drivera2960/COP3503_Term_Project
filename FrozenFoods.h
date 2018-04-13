@@ -1,13 +1,7 @@
-//
-//  FrozenFoods.h
-//  
-//
-//  Created by Martin Lasprilla on 4/12/18.
-//
-
 #ifndef FrozenFoods_h
 #define FrozenFoods_h
 
+#include <string>
 #include "Store.h"
 
 
@@ -20,30 +14,29 @@ class FrozenFoods{
             double supermarketQuantity;
     
         public:
-            Frozen(string name, string type, double pricePerLlb);
+            FrozenFoods(std::string name, std::string type, double pricePerLlb);
             void addFrozen(std::string name, std::string section);
             std::string getName();
             std::string getType();
-            double pricePerItem();
-    
+            double getpricePerItem();
 };
 
-Frozen::Frozen(std::string name, std::string type, double pricePerItem):name(name), type(type){
+FrozenFoods::FrozenFoods(std::string name, std::string type, double pricePerItem):name(name), type(type){
     this -> pricePerItem = pricePerItem;
     this -> supermarketQuantity = 100;
 }
 
-string Frozen::getName(){
+std::string FrozenFoods::getName(){
     return this -> name;
 }
 
-string Frozen::getType(){
+std::string FrozenFoods::getType(){
     return this-> type;
 }
 
-double Frozen::getpricePerItem(){
+double FrozenFoods::getpricePerItem()
+{
     return this -> pricePerItem;
-    
 }
 
 #endif /* FrozenFoods_h */

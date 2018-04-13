@@ -5,37 +5,35 @@
 #ifndef COP3503_TERM_PROJECT_MASTER_HYGIENE_H
 #define COP3503_TERM_PROJECT_MASTER_HYGIENE_H
 
-#include "Store.h"
 #include <string>
-#include <iostream>
 
-using namespace std;
+#include "Store.h"
 
 class Hygiene{
     friend class Store;
         private:
-            const string name;
-            const string type;
+            const std::string name;
+            const std::string type;
             double pricePerUnit;
             double amount;
             double supermarketQuantity;
 
         public:
-            Hygiene(string name, double pricePerUnit);
-            string getName();
-            Hygiene addHygiene(string name);
-            string getName();
+            Hygiene(std::string name, double amount, double pricePerUnit);
+            std::string getName();
+            std::string getName();
             double getPricePerUnit();
             double getAmount();
 
-        Hygiene::Hygiene(string name, double pricePerBox):name(name)
+        Hygiene::Hygiene(std::string name, double amount, double pricePerBox):name(name)
             {
+        		this ->amount = amount;
                 this ->pricePerUnit = pricePerUnit;
                 this-> supermarketQuantity = 100;
             }
 
 };
-string Hygiene::getName()
+std::string Hygiene::getName()
 {
     return this -> name;
 }
@@ -45,12 +43,9 @@ double Hygiene::getAmount()
     return this ->amount;
 }
 
-
 double Hygiene::getPricePerUnit()
 {
     return this->pricePerUnit;
 }
-
-
 
 #endif //COP3503_TERM_PROJECT_MASTER_HYGIENE_H
