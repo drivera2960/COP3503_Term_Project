@@ -1,6 +1,10 @@
 #ifndef MEATS_H_
 #define MEATS_H_
 
+#include <string>
+#include <vector>
+#include <iomanip>
+
 #include "Store.h"
 
 using namespace std;
