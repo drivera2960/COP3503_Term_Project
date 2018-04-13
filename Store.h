@@ -11,6 +11,8 @@
 #include "HotFoods.h"
 #include "FrozenFoods.h"
 #include "Hygiene.h"
+#include "dairy.h"
+#include "grains.h"
 
 /*hygeine, homeGoods, bakery class, amount wasn't initialized in constructor
  *types should be set as const?
@@ -26,12 +28,14 @@ class Store{
 		std::vector<Meats> meatItems;
 		std::vector<Deli> deliItems;
 		std::vector<Snacks> snackItems;
-        std::vector<Bakery> bakeryItems;
+        	std::vector<Bakery> bakeryItems;
 		std::vector<Pharmacy> pharmacyItems;
 		std::vector<HotFoods> hotFoodItems;
 		std::vector<HomeGoods> homeGoodItems;
 		std::vector<FrozenFoods> frozenFoodItems;
-		std::vector<Hygiene>hygieneItems;
+		std::vector<Hygiene> hygieneItems;
+		std::vector<Dairy> dairyItems;
+		std::vector<Grains> grainItems;
 
 	public:
 		Store();
@@ -50,8 +54,10 @@ class Store{
 		void addPharmacy(std::string name, double pricePerCapsules, double supermarketQuantity);
 		void addProduce(std::string name, std::string type, double pricePerLlb);
 		void addSnacks(std::string name, double pricePerAmount, double supermarketQuantity);
-;
+		void addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice);
+		void addDairy(string dairyName, string brandName, int sizeFlOz, double storePrice);
 };
+
 Store::Store(){
 }
 
@@ -85,7 +91,15 @@ void Store::addBakery(std::string name, double amount, double pricePerBox)
     bakeryItems.push_back(Bakery(name, amount, pricePerBox));
 }
 
+void Store::addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice){
+	grainItems.push_back(Grains(grainName, brandName, sizeLbs, organic, glutenFree, storePrice));
+	allItemNames.push_back(grainName);
+}
 
+void Store::addDairy(string dairyName, string brandName, int sizeFlOz, double storePrice){
+	dairyItems.push_back(Dairy(dairyName, brandName, sizeFlOz, storePrice));
+	allItemNames.push_back(dairyName);
+}
 
 
 
