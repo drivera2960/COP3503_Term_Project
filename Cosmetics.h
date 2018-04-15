@@ -1,7 +1,9 @@
 #ifndef COSMETICS_H_INCLUDED
 #define COSMETICS_H_INCLUDED
 
+#include <string>
 #include "Store.h"
+
 
 class Cosmetics {
 
