@@ -30,14 +30,13 @@ class Store{
 		std::vector<Meats> meatItems;
 		std::vector<Deli> deliItems;
 		std::vector<Snacks> snackItems;
-        	std::vector<Bakery> bakeryItems;
+        std::vector<Bakery> bakeryItems;
 		std::vector<Pharmacy> pharmacyItems;
 		std::vector<HotFoods> hotFoodItems;
 		std::vector<HomeGoods> homeGoodItems;
 		std::vector<FrozenFoods> frozenFoodItems;
 
-		//std::vector<Hygiene>hygieneItems;
-		//std::vector<Hygiene> hygieneItems;
+		std::vector<Hygiene>hygieneItems;
 		std::vector<Dairy> dairyItems;
 		std::vector<Grains> grainItems;
 		std::vector <Drinks> drinkItems;
@@ -54,17 +53,19 @@ class Store{
 		void addDeli(std::string name, double pricePerLlb);
 		void addFrozenFoods(std::string name, std::string type, double pricePerLlb);
 		void addHomeGoods(std::string name,std::string type, double amount, double pricePerUnit);
-		void addHotFoods(std::string name, std::string type, double pricePerItem, double supermarketQuantity);
-		void addHygiene(std::string name, double amount, double pricePerBox);
+
 		void addMeat(std::string name, std::string type, double pricePerLlb);
 		void addPharmacy(std::string name, double pricePerCapsules, double supermarketQuantity);
 		void addProduce(std::string name, std::string type, double pricePerLlb);
 		void addSnacks(std::string name, double pricePerAmount, double supermarketQuantity);
-
-		void addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice);
-		void addDairy(string dairyName, string brandName, int sizeFlOz, double storePrice);
+		void addDairy(std::string dairyName, std::string brandName, int sizeFlOz, double storePrice);
+		void addFrozenFoodItems(std::string name, std::string type, double pricePerItem);
+		void addGrain(std::string grainName, std::string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice);
         void addDrinks(std::string name, std::string type, double pricePerOz);
 		void addCosmetics(std::string name, std::string brand, double price);
+
+		void addHotFoods(std::string name, std::string type, double pricePerItem, double supermarketQuantity);
+		void addHygiene(std::string name, double amount, double pricePerBox);
 };
 
 Store::Store(){
@@ -108,15 +109,32 @@ void Store::addCosmetics(std::string name, std::string brand, double price){
 	cosmeticItems.push_back(Cosmetics(name, brand, price));
 }
 
-void Store::addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice){
+void Store::addGrain(std::string grainName, std::string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice){
 	grainItems.push_back(Grains(grainName, brandName, sizeLbs, organic, glutenFree, storePrice));
 }
 
-void Store::addDairy(string dairyName, string brandName, int sizeFlOz, double storePrice){
+void Store::addDairy(std::string dairyName, std::string brandName, int sizeFlOz, double storePrice){
 	dairyItems.push_back(Dairy(dairyName, brandName, sizeFlOz, storePrice));
 }
 
+void Store::addFrozenFoodItems(std::string name, std::string type, double pricePerItem){
+	frozenFoodItems.push_back(FrozenFoods(name, type, pricePerItem));
+}
 
+void Store::addHomeGoods(std::string name, std::string type, double amount, double pricePerUnit)
+{
+	homeGoodItems.push_back(HomeGoods(name, type, amount, pricePerUnit));
+}
+
+void Store::addHotFoods(std::string name, std::string type, double pricePerItem, double supermarketQuantity)
+{
+	hotFoodItems.push_back(HotFoods(name, type, pricePerItem, supermarketQuantity));
+}
+
+void Store::addHygiene(std::string name, double amount, double pricePerBox)
+{
+	hygieneItems.push_back(Hygiene(name, amount, pricePerBox));
+}
 
 
 void Store::listFruit(){
@@ -166,7 +184,6 @@ void Store::listInfo()
         std::cout << "Amount per package: "<< bakeryItems.at(k).getAmount()<<"\n\t" <<"Price per package: $" << bakeryItems.at(k).getPricePerBox() << "\n" << "\n";
     }
 
-
     std::cout<<"PHARMACY"<<std::endl;
     for(int i = 0, max = pharmacyItems.size(); i!= max; i++){
         std::cout<< pharmacyItems.at(i).getName()<< "\n" << "\t" << "Price_per_capsules: $" <<pharmacyItems.at(i).getPricePerCapsules() << "\n" << "\n";
@@ -178,9 +195,8 @@ void Store::listInfo()
         std::cout << snackItems.at(i).getName() << "\n" << "Section: Snacks" << "\t" << "Price_per_amount: $" << snackItems.at(i).getPricePerAmount() << "\n" << "\n";
     }
 
-    std::cout<<endl;
-	std::cout<<"DRINKS"<<endl;
-
+    std::cout<<std::endl;
+	std::cout<<"DRINKS"<<std::endl;
     for(int i = 0, max = drinkItems.size(); i != max; ++i){
         if(drinkItems.at(i).getAisle().compare("drinks") == 0){
             std::cout << drinkItems.at(i).getName()<< "\n" << "\t" << "Section: drinks" <<"\n" << "\t";
@@ -189,9 +205,8 @@ void Store::listInfo()
         }
     }
 
-    std::cout<<endl;
-	std::cout<<"COSMETICS"<<endl;
-
+    std::cout<<std::endl;
+	std::cout<<"COSMETICS"<<std::endl;
     for(int i = 0, max = cosmeticItems.size(); i != max; ++i){
         if(cosmeticItems.at(i).getAisle().compare("cosmetics") == 0){
             std::cout << cosmeticItems.at(i).getName()<< "\n" << "\t" << "Section: cosmetics" <<"\n" << "\t";
@@ -199,6 +214,7 @@ void Store::listInfo()
 
         }
     }
+
 
 }
 

@@ -21,18 +21,18 @@ class Hygiene{
         public:
             Hygiene(std::string name, double amount, double pricePerUnit);
             std::string getName();
-            std::string getName();
             double getPricePerUnit();
             double getAmount();
 
-        Hygiene::Hygiene(std::string name, double amount, double pricePerBox):name(name)
-            {
-        		this ->amount = amount;
-                this ->pricePerUnit = pricePerUnit;
-                this-> supermarketQuantity = 100;
-            }
-
 };
+
+Hygiene::Hygiene(std::string name, double amount, double pricePerBox):name(name)
+    {
+		this ->amount = amount;
+        this ->pricePerUnit = pricePerUnit;
+        this-> supermarketQuantity = 100;
+    }
+
 std::string Hygiene::getName()
 {
     return this -> name;

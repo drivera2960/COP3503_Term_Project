@@ -6,19 +6,17 @@
 #ifndef GRAINS_H_
 #define GRAINS_H_
 
-#include <string> // string class
+#include <string> // std::string class
 #include <iostream> // cout and cin
 #include <stdlib.h>  // for random number generator //srand
 #include <time.h> // for random number generator //time
-
-using namespace std;
 
 class Grains // Rice, Grains and Cereal
 {
 	friend class Store;
 		private: 
-			const string grainName; // E.g. Rice, Wheat, Beans,
-      const string brandName; // White Rice, Brown Rice, Pinto Beans etc...
+			const std::string grainName; // E.g. Rice, Wheat, Beans,
+      const std::string brandName; // White Rice, Brown Rice, Pinto Beans etc...
       const double sizeLbs; // bags in Pounds
       const bool organic; // Is it organic?
 			const bool glutenFree; // Is it gluten free?
@@ -29,9 +27,9 @@ class Grains // Rice, Grains and Cereal
 
 		public:
 			// This creates an instance of the Grain Product
-			Grains(string grainName, string brandName, double sizeLbs, bool organic, bool glutenFree, double storePrice);
-			string getGrainName(); // E.g. Rice, Wheat, Beans,
-			string getBrandName(); // White Rice, Brown Rice, Pinto Beans etc...
+			Grains(std::string grainName, std::string brandName, double sizeLbs, bool organic, bool glutenFree, double storePrice);
+			std::string getGrainName(); // E.g. Rice, Wheat, Beans,
+			std::string getBrandName(); // White Rice, Brown Rice, Pinto Beans etc...
       double getSizeLbs(); // bags/boxes in Pounds
 			bool getOrganic(); // Is it organic?
 			bool getGlutenFree(); // Is it gluten free?
@@ -39,7 +37,7 @@ class Grains // Rice, Grains and Cereal
 			int getStoreQty(); // Number of bags/boxes available in store
 };
 
-Grains::Grains(string grainName, string brandName, double sizeLbs, bool organic, bool glutenFree, double storePrice):grainName(grainName), brandName(brandName), sizeLbs(sizeLbs), organic(organic), glutenFree(glutenFree){
+Grains::Grains(std::string grainName, std::string brandName, double sizeLbs, bool organic, bool glutenFree, double storePrice):grainName(grainName), brandName(brandName), sizeLbs(sizeLbs), organic(organic), glutenFree(glutenFree){
 	srand (time(0));
 	this->storePrice = storePrice; // set Price per bag/box
 	this->storeQty = rand() % 21 + 10; // Qty between 10 and 30 inclusive
@@ -49,7 +47,7 @@ void Grains::updateStorePrice(double storePrice){ // Change the Price per bag/bo
 	if (storePrice > 0){
 		this->storePrice = storePrice;
 	} else {
-		cout << "Update failed. StorePrice cannot be negative. " << endl;
+		std::cout << "Update failed. StorePrice cannot be negative. " << std::endl;
 	}
 }
 
@@ -57,16 +55,16 @@ void Grains::updateStoreQty(int soldQty){ // After something is bought from stor
 	if (this->storeQty >= soldQty){
 		this->storeQty -= soldQty;
 	} else {
-		cout << "Purchase cannot be made. There are only " << getStoreQty() << " left in store." << endl;
+		std::cout << "Purchase cannot be made. There are only " << getStoreQty() << " left in store." << std::endl;
 	}
 }
 
 // GETTERS
-string Grains::getGrainName(){ // E.g. Rice, Wheat, Beans,
+std::string Grains::getGrainName(){ // E.g. Rice, Wheat, Beans,
 	return this->grainName;
 }
 
-string Grains::getBrandName(){ //E.g. "White" Rice, "Brown" Rice, "Pinto" Beans etc...
+std::string Grains::getBrandName(){ //E.g. "White" Rice, "Brown" Rice, "Pinto" Beans etc...
 	return this->brandName;
 }
 

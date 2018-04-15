@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include <iomanip>
+#include <algorithm>
 
 #include "Store.h"
 
@@ -33,8 +34,10 @@ while(std::getline(productDataFile, line)){
 
 //While-loop will split "line" by the spaces it contains.  It will store the splitted strings into "lineVec"
 	while( iss >> line )
+	{
+		line.erase(remove(line.begin(), line.end(), '_'), line.end());	//remove underscores from strings
 	    lineVec.push_back(line);
-
+	}
 //The following bool expressions check what sections the each entry belongs to.
 	if (lineVec.at(1).compare("produce") == 0){
 			supermarket.addProduce(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
