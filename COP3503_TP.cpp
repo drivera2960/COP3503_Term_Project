@@ -42,6 +42,10 @@ while(std::getline(productDataFile, line)){
 	else if (lineVec.at(1).compare("meat") == 0){
 			supermarket.addMeat(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
 	}
+	else if (lineVec.at(1).compare("bakery") == 0)
+	{
+		supermarket.addBakery(lineVec.at(0), stod(lineVec.at(2)), stod(lineVec.at(3)));
+	}
 
 
 	lineVec.clear();
@@ -50,7 +54,6 @@ while(std::getline(productDataFile, line)){
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-
 
 	supermarket.listInfo();
 

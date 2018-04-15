@@ -31,7 +31,7 @@ class Store{
 		std::vector<HotFoods> hotFoodItems;
 		std::vector<HomeGoods> homeGoodItems;
 		std::vector<FrozenFoods> frozenFoodItems;
-		std::vector<Hygiene>hygieneItems;
+		//std::vector<Hygiene>hygieneItems;
 
 	public:
 		Store();
@@ -50,7 +50,7 @@ class Store{
 		void addPharmacy(std::string name, double pricePerCapsules, double supermarketQuantity);
 		void addProduce(std::string name, std::string type, double pricePerLlb);
 		void addSnacks(std::string name, double pricePerAmount, double supermarketQuantity);
-;
+
 };
 Store::Store(){
 }
@@ -90,11 +90,6 @@ void Store::addBakery(std::string name, double amount, double pricePerBox)
 
 
 
-
-
-
-
-
 void Store::listFruit(){
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
 		if(produceItems.at(i).getType().compare("fruit") == 0)
@@ -114,7 +109,8 @@ void Store::listVegetables(){
 	}
 }
 
-void Store::listInfo(){
+void Store::listInfo()
+{
 	std::cout<<"PRODUCE"<<std::endl;
 	for(int i = 0, max = produceItems.size(); i != max; ++i){
 		std::cout << produceItems.at(i).getName()<< "\n" << "\t" << "Section: produce" <<"\n" << "\t";
@@ -137,8 +133,8 @@ void Store::listInfo(){
     std::cout<<std::endl <<"BAKERY ITEMS"<<std::endl;
     for(int k = 0, max = bakeryItems.size(); k!=max; ++k)
     {
-        std::cout<<bakeryItems.at(k).getName()<< "\n" << "\t" << "Section: meat" << "\n" << "\t";
-        std::cout <<"Price_per_llb: $" << bakeryItems.at(k).getPricePerBox() << "\n" << "\n";
+        std::cout<<bakeryItems.at(k).getName()<< "\n" << "\t" << "Section: bakery" << "\n" << "\t";
+        std::cout << "Amount per package: "<< bakeryItems.at(k).getAmount()<<"\n\t" <<"Price per package: $" << bakeryItems.at(k).getPricePerBox() << "\n" << "\n";
     }
 
 

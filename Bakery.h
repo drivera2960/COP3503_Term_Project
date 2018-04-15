@@ -10,7 +10,7 @@ class Bakery
     friend class Store;
 private:
     const std::string name;
-    const std::string type;
+   // const std::string type;
     double pricePerBox;
     double amount;
     double supermarketQuantity;
