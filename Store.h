@@ -35,15 +35,13 @@ class Store{
 		std::vector<HotFoods> hotFoodItems;
 		std::vector<HomeGoods> homeGoodItems;
 		std::vector<FrozenFoods> frozenFoodItems;
-<<<<<<< HEAD
+
 		//std::vector<Hygiene>hygieneItems;
-=======
-		std::vector<Hygiene> hygieneItems;
+		//std::vector<Hygiene> hygieneItems;
 		std::vector<Dairy> dairyItems;
 		std::vector<Grains> grainItems;
 		std::vector <Drinks> drinkItems;
 		std::vector <Cosmetics> cosmeticItems;
->>>>>>> e688d2bd4a4a989d8a913c661c77048c25901743
 
 	public:
 		Store();
@@ -62,14 +60,11 @@ class Store{
 		void addPharmacy(std::string name, double pricePerCapsules, double supermarketQuantity);
 		void addProduce(std::string name, std::string type, double pricePerLlb);
 		void addSnacks(std::string name, double pricePerAmount, double supermarketQuantity);
-<<<<<<< HEAD
 
-=======
 		void addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice);
 		void addDairy(string dairyName, string brandName, int sizeFlOz, double storePrice);
         void addDrinks(std::string name, std::string type, double pricePerOz);
 		void addCosmetics(std::string name, std::string brand, double price);
->>>>>>> e688d2bd4a4a989d8a913c661c77048c25901743
 };
 
 Store::Store(){
@@ -115,12 +110,10 @@ void Store::addCosmetics(std::string name, std::string brand, double price){
 
 void Store::addGrain(string grainName, string brandName, int sizeLbs, bool organic, bool glutenFree, double storePrice){
 	grainItems.push_back(Grains(grainName, brandName, sizeLbs, organic, glutenFree, storePrice));
-	allItemNames.push_back(grainName);
 }
 
 void Store::addDairy(string dairyName, string brandName, int sizeFlOz, double storePrice){
 	dairyItems.push_back(Dairy(dairyName, brandName, sizeFlOz, storePrice));
-	allItemNames.push_back(dairyName);
 }
 
 

@@ -10,7 +10,5 @@ Carrot produce vegetable 0.50
 Churrasco meat beef 3.00
 Celery produce vegetable 0.6
 Walnuts produce nut 3.56
-<<<<<<< HEAD
 Bread bakery 5 2.50
-=======
->>>>>>> e688d2bd4a4a989d8a913c661c77048c25901743
+lipstick cosmetics beauty 5
