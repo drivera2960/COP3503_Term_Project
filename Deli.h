@@ -13,18 +13,21 @@ class Deli
         private:
         const std::string name;
         double pricePerLlb;
+        double pricePerUnit;
         double supermarketQuantity;
 
+
         public:
-        Deli(std::string name, double pricePerLlb);
+        Deli(std::string name, double pricePerLlb, double pricePerUnit);
         void addDeliProduct(std::string name, std::string section);
         std::string getName();
         double getPricePerLlb();
 
 };
 
-Deli::Deli(std::string name, double pricePerLlb):name(name)
+Deli::Deli(std::string name, double pricePerLlb, double PricePerUnit):name(name)
 {
+	this ->pricePerUnit = pricePerUnit;
     this ->pricePerLlb = pricePerLlb;
     this-> supermarketQuantity = 100;
 }

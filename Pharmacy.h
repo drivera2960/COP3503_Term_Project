@@ -20,7 +20,7 @@ public:
 
 };
 
-Pharmacy::Pharmacy(std::string name, double pricePerCapsules, double supermarketQuantity)
+Pharmacy::Pharmacy(std::string name, double pricePerCapsules, double supermarketQuantity):name(name)
 {
     this->pricePerCapsules = pricePerCapsules;
     this->supermarketQuantity = 100;

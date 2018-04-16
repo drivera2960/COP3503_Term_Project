@@ -35,29 +35,41 @@ while(std::getline(productDataFile, line)){
 //While-loop will split "line" by the spaces it contains.  It will store the splitted strings into "lineVec"
 	while( iss >> line )
 	{
-		line.erase(remove(line.begin(), line.end(), '_'), line.end());	//remove underscores from strings
+		replace( line.begin(), line.end(), '_', ' ' );
+		//line.erase(remove(line.begin(), line.end(), '_'), line.end());	//remove underscores from strings
 	    lineVec.push_back(line);
 	}
 //The following bool expressions check what sections the each entry belongs to.
-	if (lineVec.at(1).compare("produce") == 0){
-			supermarket.addProduce(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
-		}
-	else if (lineVec.at(1).compare("meat") == 0){
-			supermarket.addMeat(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
+	if (lineVec.at(0).compare("produce") == 0){
+		supermarket.addProduce(lineVec.at(1), lineVec.at(2), stod(lineVec.at(3)));
 	}
-	else if (lineVec.at(1).compare("bakery") == 0)
-	{
-		supermarket.addBakery(lineVec.at(0), stod(lineVec.at(2)), stod(lineVec.at(3)));
+	else if(lineVec.at(0).compare("meat") == 0){
+			supermarket.addMeat(lineVec.at(1), lineVec.at(2), stod(lineVec.at(3)));
 	}
-
-    else if (lineVec.at(1).compare("drinks") == 0){
-        supermarket.addDrinks(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
+    else if(lineVec.at(0).compare("drinks") == 0){
+        supermarket.addDrinks(lineVec.at(1), lineVec.at(2), stod(lineVec.at(3)));
 	}
-
-	else if (lineVec.at(1).compare("cosmetics") == 0){
-		supermarket.addCosmetics(lineVec.at(0), lineVec.at(2), stod(lineVec.at(3)));
+    else if(lineVec.at(0).compare("cosmetics") == 0){
+		supermarket.addCosmetics(lineVec.at(1), lineVec.at(2), stod(lineVec.at(3)));
 	}
-
+    else if(lineVec.at(0).compare("deli") == 0){
+    	supermarket.addDeli(lineVec.at(1), stod(lineVec.at(2)), stod(lineVec.at(3)));
+    }
+    else if(lineVec.at(0).compare("bakery") == 0){
+    	supermarket.addBakery(lineVec.at(1), stod(lineVec.at(2)));
+    }
+    else if(lineVec.at(0).compare("pharmacy") == 0){
+    	supermarket.addPharmacy(lineVec.at(1), stod(lineVec.at(2)), stod(lineVec.at(3)));
+    }
+    else if(lineVec.at(0).compare("snacks") == 0){
+    	supermarket.addSnacks(lineVec.at(1), stod(lineVec.at(2)), stod(lineVec.at(3)));
+    }
+    else if(lineVec.at(0).compare("HotFoods") == 0){
+    	supermarket.addHotFoods(lineVec.at(1), stod(lineVec.at(2)));
+    }
+    else if(lineVec.at(0).compare("FrozenFoods") == 0){
+    	supermarket.addHotFoods(lineVec.at(1), stod(lineVec.at(2)));
+    }
 	lineVec.clear();
 }
 	productDataFile.close();	//Closes the stream of productDataFile when the eof has been reached.

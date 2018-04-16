@@ -12,20 +12,20 @@ private:
     const std::string name;
    // const std::string type;
     double pricePerBox;
-    double amount;
+    //double amount;
     double supermarketQuantity;
 
 public:
-    Bakery(std::string name, double amount, double pricePerBox);
+    Bakery(std::string name, double pricePerBox);
     void addBakeryProduct(std::string name);
     std::string getName();
-    double getAmount();
+   // double getAmount();
     double getPricePerBox();
 };
 
-Bakery::Bakery(std::string name, double amount ,double pricePerBox):name(name)
+Bakery::Bakery(std::string name, double pricePerBox):name(name)
 {
-	this ->amount = amount;
+	//this ->amount = amount;
     this ->pricePerBox = pricePerBox;
     this-> supermarketQuantity = 100;
 }
@@ -34,12 +34,12 @@ std::string Bakery::getName()
 {
     return this -> name;
 }
-
+/*
 double Bakery::getAmount()
 {
-    return this ->amount;
+    return this -> amount;
 }
-
+*/
 
 double Bakery::getPricePerBox()
 {

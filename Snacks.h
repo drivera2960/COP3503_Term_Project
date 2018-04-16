@@ -20,7 +20,7 @@ public:
 
 };
 
-Snacks::Snacks(std::string name, double pricePerAmount, double supermarketQuantity)
+Snacks::Snacks(std::string name, double pricePerAmount, double supermarketQuantity):name(name)
 {
     this->pricePerAmount = pricePerAmount;
     this->supermarketQuantity = 100;

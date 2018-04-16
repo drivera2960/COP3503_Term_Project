@@ -19,6 +19,7 @@ public:
     HomeGoods addHomeGoods(std::string name);
     double getPricePerUnit();
     double getAmount();
+    std::string getType();
 
 };
 
@@ -33,6 +34,12 @@ std::string HomeGoods::getName()
 {
     return this -> name;
 }
+
+std::string HomeGoods::getType()
+{
+    return this -> type;
+}
+
 
 double HomeGoods::getAmount()
 {

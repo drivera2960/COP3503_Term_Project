@@ -16,12 +16,12 @@ class Grains // Rice, Grains and Cereal
 	friend class Store;
 		private: 
 			const std::string grainName; // E.g. Rice, Wheat, Beans,
-      const std::string brandName; // White Rice, Brown Rice, Pinto Beans etc...
-      const double sizeLbs; // bags in Pounds
-      const bool organic; // Is it organic?
+			const std::string brandName; // White Rice, Brown Rice, Pinto Beans etc...
+			const double sizeLbs; // bags in Pounds
+			const bool organic; // Is it organic?
 			const bool glutenFree; // Is it gluten free?
 			double storePrice; // Price per bag/box
-      int storeQty; // How many bags/boxes are available in store?
+			int storeQty; // How many bags/boxes are available in store?
 			void updateStorePrice(double newPrice); // Change the Price per bag/box
 			void updateStoreQty(int newQty); // After something is bought from store instance
 
@@ -30,7 +30,7 @@ class Grains // Rice, Grains and Cereal
 			Grains(std::string grainName, std::string brandName, double sizeLbs, bool organic, bool glutenFree, double storePrice);
 			std::string getGrainName(); // E.g. Rice, Wheat, Beans,
 			std::string getBrandName(); // White Rice, Brown Rice, Pinto Beans etc...
-      double getSizeLbs(); // bags/boxes in Pounds
+			double getSizeLbs(); // bags/boxes in Pounds
 			bool getOrganic(); // Is it organic?
 			bool getGlutenFree(); // Is it gluten free?
 			double getStorePrice(); // Price per bag/box
