@@ -6,7 +6,7 @@
 #ifndef DAIRY_H_
 #define DAIRY_H_
 
-#include "Store.h" // a friend class
+#include <iostream> // cin and cout
 #include <stdlib.h>  // for random number generator //srand
 #include <time.h> // for random number generator //time
 #include <string>
@@ -21,7 +21,7 @@ class Dairy // Dairy Products
 			double storePrice; // Price per bottle
 			int storeQty; // How many bags/boxes are available in store?
 			void updateStorePrice(double newPrice); // Change the Price per bag/box
-			void updateStoreQty(int newQty); // After something is bought from store instance
+			void updateStoreQty(int newQty); // Change the Store Qty to newQty
 
 		public:
 			// This creates an instance of the Dairy Product
