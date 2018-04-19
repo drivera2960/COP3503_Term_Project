@@ -7,8 +7,17 @@
 
 #include <stdio.h>
 #include <string>
+#include <numeric>
 #include "Cashier.h"
+#include 
 
+// create a function that pushes the price of the selected item to cart vector
+
+
+
+// create a function that adds up all the prices in cart vector
+int sum_of_items;
+sum_of_items = std::accumulate(cart.begin(), cart.end(), 0.0);
 
 int main(){
     cout << "Your Total is: " << total ;
