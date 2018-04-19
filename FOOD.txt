@@ -61,12 +61,12 @@ pharmacy nyQuil_50_capsules 14.99 100
 snacks tostitos_partybag_chips 8.55 100
 snacks doritos_partybag 12.99 100
 snacks lays_partybag 10.99 100
-snacks mr.Djald’s_pretzels 8.99 100
-snacks mr.Djald’s_cookies 7.99 100
-snacks mr.Djald’s_candy 5.48 100
-snacks mr.Djald’s_crackers 6.99 100
-snacks mr.Djald’s_mixed_nuts 7.99 100
-snacks my.Djald’s_chocolate 5.15 100
+snacks mr.Djaldâ€™s_pretzels 8.99 100
+snacks mr.Djaldâ€™s_cookies 7.99 100
+snacks mr.Djaldâ€™s_candy 5.48 100
+snacks mr.Djaldâ€™s_crackers 6.99 100
+snacks mr.Djaldâ€™s_mixed_nuts 7.99 100
+snacks my.Djaldâ€™s_chocolate 5.15 100
 snacks hershey_chocolate 8.99 100
 cosmetics Powder True_Match 8.99
 cosmetics Blush True_Match 8.99
@@ -135,3 +135,25 @@ FrozenFoods vanilla_ice_cream 3.99
 FrozenFoods chocolate_ice_cream 3.99
 FrozenFoods strawberry_ice_cream 3.99
 FrozenFoods cookies_and_cream_ice_cream 3.99
+Hygiene soap 2.99
+Hygiene toothpaste 1.99
+Hygiene lotion 6.99
+Hygiene cream 5.99
+Hygiene hand_sanitizer 3.99
+Hygiene shampoo 8.99
+Hygiene conditioner 8.99
+Hygiene toothbrush 1.99
+Hygiene baby_wipes 3.99
+Hygiene deodorant 2.99
+Hygiene shaving_cream 2.99
+Hygiene shaving_razor 4.99
+HomeGoods paper_towels 0.99
+HomeGoods plastic_utensils 3.99
+HomeGoods disposable_plates 4.99
+HomeGoods aluminum_foil 7.99
+HomeGoods saran_wrap 3.99
+HomeGoods plastic_containers 11.99
+HomeGoods plastic_cups 2.99
+HomeGoods light_bulbs 4.99
+HomeGoods napkins 3.99
+HomeGoods plastic_gloves 8.99
