@@ -1,56 +1,75 @@
-#ifndef COP3503_TERM_PROJECT_MASTER_HOMEGOODS_H
-#define COP3503_TERM_PROJECT_MASTER_HOMEGOODS_H
+// HomeGoods.h - HomeGoods Aisle Header File
+// Author: Jayme Garces
+// COP3503 Final Project: Mr. Djald's Supermarket
+// Due: Monday, April 23rd, 2018.
 
-#include "Store.h"
-#include <string>
+#ifndef HOMEGOODS_H_
+#define HOMEGOODS_H_
 
-class HomeGoods{
+#include <iostream> // cin and cout
+#include <string> // for the string class
+#include <stdlib.h>  // for random number generator //srand
+#include <time.h> // for random number generator //time
+
+class HomeGoods
+{
     friend class Store;
-private:
-    const std::string name;
-    const std::string type;
-    double pricePerUnit;
-    double amount;
-    double supermarketQuantity;
 
-public:
-    HomeGoods(std::string name,std::string type, double amount, double pricePerUnit);
-    std::string getName();
-    HomeGoods addHomeGoods(std::string name);
-    double getPricePerUnit();
-    double getAmount();
-    std::string getType();
+    private:
+      const std::string name;
+      const double unitsPerPack;
+      double pricePerPack;
+      double quantity;
+      void updatePricePerPack(double newPrice); // Change the Price per pack
+      void decQuantity(double newQty); // Decrement the quantity in store
 
+    public:
+      HomeGoods(std::string name, double unitsPerPack, double pricePerPack);
+      std::string getName();
+      double getUnitsPerPack();
+      double getPricePerPack();
+      double getQuantity();
 };
 
-HomeGoods::HomeGoods(std::string name, std::string type, double amount, double pricePerUnit):name(name)
-{
-   	this -> amount = amount;
-    this ->pricePerUnit = pricePerUnit;
-    this-> supermarketQuantity = 100;
+// CONSTRUCTOR
+HomeGoods::HomeGoods(std::string name, double unitsPerPack, double pricePerPack):name(name), unitsPerPack(unitsPerPack){
+  srand (time(0));
+  this->pricePerPack = pricePerPack;
+  this->quantity = rand() % 71 + 70; // Qty between 70 and 140 inclusive // U = 140, L = 70, // rand() % (1 + U - L) + L
 }
 
-std::string HomeGoods::getName()
-{
-    return this -> name;
+// SETTERS
+void HomeGoods::updatePricePerPack(double newPrice){ // Change the Price per pack
+	if (newPrice > 0){
+		this->pricePerPack = newPrice;
+	} else {
+		std::cout << "Update failed. HomeGoods pricePerPack cannot be negative. " << std::endl;
+	}
 }
 
-std::string HomeGoods::getType()
-{
-    return this -> type;
+void HomeGoods::decQuantity(double newQty){ // After something is bought from store instance
+	if (this->quantity >= newQty){
+		this->quantity -= newQty;
+	} else {
+		std::cout << "Purchase cannot be made. There are only " << getQuantity() << " left in store." << std::endl;
+	}
 }
 
-
-double HomeGoods::getAmount()
-{
-    return this ->amount;
+// GETTERS
+std::string HomeGoods::getName(){
+    return this->name;
 }
 
-
-double HomeGoods::getPricePerUnit()
-{
-    return this->pricePerUnit;
+double HomeGoods::getPricePerPack(){
+    return this->pricePerPack;
 }
 
+double HomeGoods::getUnitsPerPack(){
+    return this->unitsPerPack;
+}
 
-#endif //COP3503_TERM_PROJECT_MASTER_HOMEGOODS_H
+double HomeGoods::getQuantity(){
+    return this->quantity;
+}
+
+#endif // HOMEGOODS_H_
