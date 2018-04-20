@@ -68,7 +68,7 @@ while(std::getline(productDataFile, line)){
     	supermarket.addHotFoods(lineVec.at(1), stod(lineVec.at(2)));
     }
     else if(lineVec.at(0).compare("FrozenFoods") == 0){
-    	supermarket.addHotFoods(lineVec.at(1), stod(lineVec.at(2)));
+    	supermarket.addFrozenFoodItems(lineVec.at(1), stod(lineVec.at(2)));
     }
 	lineVec.clear();
 }
