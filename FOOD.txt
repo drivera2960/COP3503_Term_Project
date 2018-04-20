@@ -156,7 +156,6 @@ Grains Baked_Beans Bush's 1.75 false false 2.28
 Grains Kidney_Beans Progresso 2.5 false true 3.48
 Grains Cereal Lucky_Charms 1.25 false true 3.64
 Grains Raisin_Bran Kellogg's 1 false true 4.58
-FrozenFoods cookies_and_cream_ice_cream 3.99
 Hygiene soap 2.99
 Hygiene toothpaste 1.99
 Hygiene lotion 6.99
