@@ -1,8 +1,8 @@
-/*
- * COP3503termp.cpp
- *  Created on: Mar 10, 2018
- *      Author: Dave
- */
+// COP3503_TP.cpp - Main .cpp File
+// Author: David Rivera
+// Created: March 10th 2018.
+// COP3503 Final Project: Mr. Djald's Supermarket
+// Due: Monday, April 23rd, 2018.
 
 #include <iostream>
 #include <sstream>
@@ -69,6 +69,26 @@ while(std::getline(productDataFile, line)){
     }
     else if(lineVec.at(0).compare("FrozenFoods") == 0){
     	supermarket.addFrozenFoodItems(lineVec.at(1), stod(lineVec.at(2)));
+    }
+		else if(lineVec.at(0).compare("Grains") == 0){
+			bool four = false;
+			bool five = false;
+			if (lineVec.at(4) == "true"){
+				four = true;
+			}
+			if (lineVec.at(5) == "true"){
+				five = true;
+			}
+    	supermarket.addGrain(lineVec.at(1), lineVec.at(2), stoi(lineVec.at(3)), four, five, stod(lineVec.at(6)));
+    }
+		else if(lineVec.at(0).compare("Dairy") == 0){
+    	supermarket.addDairy(lineVec.at(1), lineVec.at(2), stoi(lineVec.at(3)), stod(lineVec.at(4)));
+    }
+		else if(lineVec.at(0).compare("Hygiene") == 0){
+    	supermarket.addHygiene(lineVec.at(1), stod(lineVec.at(2)));
+    }
+		else if(lineVec.at(0).compare("HomeGoods") == 0){
+    	supermarket.addHomeGoods(lineVec.at(1), stod(lineVec.at(2)), stod(lineVec.at(3)));
     }
 	lineVec.clear();
 }

@@ -11,33 +11,37 @@
 #include <string>
 #include <vector>
 
-class Cashier : public Store
+
+int paymentAmt = 0;
+int custChange = 0;
+std::string paymentMethod;
+
+
+class Cashier
 {
+    friend class Store;
 private:
     double subTotal;
     double total;
     const double tax;
-    std::vector<Store> cart;
+    std::vector<double> cart;
 public:
-    std::string paymentMethod;
-    int paymentAmt = 0;
-    int custChange = 0;
+
+    Cashier(double subTot);
     subTotal = 0;
     total = 0;
     tax = 0.06;
+};
     
-    Cashier(double subTot){
-        subTotal = subTot;
-    }
-    
-    void setSubtotal(double subTot){
-        subtotal = sub;
-    }
-    
-    double getTotal() const{
-        return total == (tax * subTotal);
-    }
-    
+Cashier::Cashier(double subTot)
+{
+    this -> subTotal = subTot;
 }
+    
+double getTotal() const{
+    return total = (tax * subTotal);
+}
+    
+
 
 #endif /* Cashier_h */

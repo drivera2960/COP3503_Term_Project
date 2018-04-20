@@ -1,0 +1,11 @@
+Grains Brown_Rice Royal_Basmati 10 false true 32.99
+Grains White_Rice White 15 true true 41.34
+Grains Cereal Honey_Bunches 2.87 false true 6.48
+Grains Cereal Cheerios 1.35 false false 4.76
+Grains Spaghetti Barilla 1 false true 11.17
+Grains Spaghetti Ronzoni 2 false false 9.95
+Grains Penne Barilla 1.5 true false 10.98
+Grains Baked_Beans Bush's 1.75 false false 2.28
+Grains Kidney_Beans Progresso 2.5 false true 3.48
+Grains Cereal Lucky_Charms 1.25 false true 3.64
+Grains Raisin_Bran Kellogg's 1 false true 4.58

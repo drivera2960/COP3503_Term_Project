@@ -1,38 +1,67 @@
+// Pharmacy.h - Pharmacy Aisle Header File
+// Author: David Espantoso
+// COP3503 Final Project: Mr. Djald's Supermarket
+// Due: Monday, April 23rd, 2018.
 
-#ifndef COP3503_TERM_PROJECT_PHARMACY_H
-#define COP3503_TERM_PROJECT_PHARMACY_H
+#ifndef PHARMACY_H_
+#define PHARMACY_H_
 
-#include "Store.h"
-#include <string>
+#include <iostream> // cin and cout
+#include <string> // for the string class
 
-class Pharmacy{
+class Pharmacy
+{
     friend class Store;
-private:
-    const std::string name;
-    double pricePerCapsules;
-    double supermarketQuantity;
 
-public:
-    Pharmacy(std::string name, double pricePerCapsules, double supermarketQuantity);
-    //void addDrug(std::string name, double pricePerCapsules, double supermarketQuantity);
-    std::string getName();
-    double getPricePerCapsules();
+    private:
+        const std::string name;
+        double pricePerCapsules;
+        double quantity;
+        void updatePricePerCapsules(double newPrice); // Change the Price per item
+        void decQuantity(double newQty); // Decrement the quantity in store
 
+    public:
+        Pharmacy(std::string name, double pricePerCapsules, double quantity);
+        std::string getName();
+        double getPricePerCapsules();
+        double getQuantity();
 };
 
-Pharmacy::Pharmacy(std::string name, double pricePerCapsules, double supermarketQuantity):name(name)
-{
-    this->pricePerCapsules = pricePerCapsules;
-    this->supermarketQuantity = 100;
+// CONSTRUCTOR
+Pharmacy::Pharmacy(std::string name, double pricePerCapsules, double quantity):name(name){
+    srand (time(0));
+  	this->pricePerCapsules = pricePerCapsules;
+  	this->quantity = quantity;
 }
 
-std::string Pharmacy::getName()
-{
+// SETTERS
+void Pharmacy::updatePricePerCapsules(double newPrice){ // Change the Price per item
+	if (newPrice > 0){
+		this->pricePerCapsules = newPrice;
+	} else {
+		std::cout << "Update failed. Pharmacy CapsulesPrice cannot be negative. " << std::endl;
+	}
+}
+
+void Pharmacy::decQuantity(double newQty){ // After something is bought from store instance
+	if (this->quantity >= newQty){
+		this->quantity -= newQty;
+	} else {
+		std::cout << "Purchase cannot be made. There are only " << getQuantity() << " left in store." << std::endl;
+	}
+}
+
+// GETTERS
+std::string Pharmacy::getName(){
     return this->name;
 }
-double Pharmacy::getPricePerCapsules()
-{
+
+double Pharmacy::getPricePerCapsules(){
     return this->pricePerCapsules;
 }
 
-#endif //COP3503_TERM_PROJECT_PHARMACY_H
+double Pharmacy::getQuantity(){
+    return this->quantity;
+}
+
+#endif // PHARMACY_H_

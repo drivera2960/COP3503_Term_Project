@@ -1,15 +1,15 @@
 produce Lettuce vegetable 0.25
-meat Sirloin beef 2.80
 produce Kiwi fruit 1.20
 produce Banana fruit 0.10
 produce Apple fruit 0.80
-meat Chicken poultry 2.80
-meat Ham pork 1.00
 produce Mango fruit 1
 produce Carrot vegetable 0.50
-meat Churrasco beef 3.00
 produce Celery vegetable 0.6
 produce Walnuts nut 3.56
+meat Churrasco beef 3.00
+meat Chicken poultry 2.80
+meat Ham pork 1.00
+meat Sirloin beef 2.80
 deli ham 1.95 40.00
 deli mortadella 1.50 25.00
 deli salami 1.30 23.00
@@ -61,12 +61,12 @@ pharmacy nyQuil_50_capsules 14.99 100
 snacks tostitos_partybag_chips 8.55 100
 snacks doritos_partybag 12.99 100
 snacks lays_partybag 10.99 100
-snacks mr.Djald’s_pretzels 8.99 100
-snacks mr.Djald’s_cookies 7.99 100
-snacks mr.Djald’s_candy 5.48 100
-snacks mr.Djald’s_crackers 6.99 100
-snacks mr.Djald’s_mixed_nuts 7.99 100
-snacks my.Djald’s_chocolate 5.15 100
+snacks mr.Djald�s_pretzels 8.99 100
+snacks mr.Djald�s_cookies 7.99 100
+snacks mr.Djald�s_candy 5.48 100
+snacks mr.Djald�s_crackers 6.99 100
+snacks mr.Djald�s_mixed_nuts 7.99 100
+snacks my.Djald�s_chocolate 5.15 100
 snacks hershey_chocolate 8.99 100
 cosmetics Powder True_Match 8.99
 cosmetics Blush True_Match 8.99
@@ -103,7 +103,7 @@ HotFoods tomato_soup 1.99
 HotFoods broccoli_cheddar_soup 1.99
 HotFoods chili_soup 1.99
 HotFoods french_fries 0.99
-HotFoods sweet_potato_fries 0.99 
+HotFoods sweet_potato_fries 0.99
 HotFoods lime_pepper_chicken_wings 6.99
 HotFoods rotisserie_chicken 5.99
 HotFoods fried_chicken 5.99
@@ -135,6 +135,27 @@ FrozenFoods vanilla_ice_cream 3.99
 FrozenFoods chocolate_ice_cream 3.99
 FrozenFoods strawberry_ice_cream 3.99
 FrozenFoods cookies_and_cream_ice_cream 3.99
+Dairy Greek_Yogurt Yoplait 6 0.99
+Dairy Whole_Milk Publix 128 2.98
+Dairy Sour_Cream Great_Value 16 1.18
+Dairy White_Eggs Great_Value 18 2.72
+Dairy Butter Beurre_President 7 5.74
+Dairy Vanilla_Soymilk Silk 65 4.02
+Dairy Almond_Milk Blue_Diamond 64 7.14
+Dairy Creamer Coffee-mate 32 3.98
+Dairy Milk_Powder Nido 56.3 15.99
+Dairy Skim_Milk Nestle 120 3.45
+Grains Brown_Rice Royal_Basmati 10 false true 32.99
+Grains White_Rice White 15 true true 41.34
+Grains Cereal Honey_Bunches 2.87 false true 6.48
+Grains Cereal Cheerios 1.35 false false 4.76
+Grains Spaghetti Barilla 1 false true 11.17
+Grains Spaghetti Ronzoni 2 false false 9.95
+Grains Penne Barilla 1.5 true false 10.98
+Grains Baked_Beans Bush's 1.75 false false 2.28
+Grains Kidney_Beans Progresso 2.5 false true 3.48
+Grains Cereal Lucky_Charms 1.25 false true 3.64
+Grains Raisin_Bran Kellogg's 1 false true 4.58
 Hygiene soap 2.99
 Hygiene toothpaste 1.99
 Hygiene lotion 6.99
